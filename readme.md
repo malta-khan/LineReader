@@ -1,8 +1,4 @@
-### Project Title:
 **Landscape LineTrack Reader: Assistive Web App for Kids with Low Vision**
-
-### Project Description:
-**Description:**
 LineTrack Reader is a user-friendly tool designed to assist children with low vision in reading more comfortably on their smartphones, particularly in landscape orientation. This accessible web application allows kids to input text and customize the display according to their preferences, making reading easier and more enjoyable.
 
 **Features:**
