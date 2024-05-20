@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LineTrack Reader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Inputs -->
+        <div class="section" id="inputs">
+            <h2>Input Text</h2>
+            <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        </div>
+
+        <!-- Options -->
+        <div class="section" id="options">
+            <h2>Options</h2>
+            <div>
+                <label for="direction">Text Direction:</label>
+                <select id="direction">
+                    <option value="ltr">Left to Right (LTR)</option>
+                    <option value="rtl">Right to Left (RTL)</option>
+                </select>
+            </div>
+            <div>
+                <label for="fontFamily">Font Family:</label>
+                <select id="fontFamily">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                </select>
+            </div>
+            <div>
+                <label for="darkMode">Dark Mode:</label>
+                <input type="checkbox" id="darkMode">
+            </div>
+            <div>
+                <label for="colorfulLines">Colorful Lines:</label>
+                <input type="checkbox" id="colorfulLines">
+            </div>
+            <div>
+                <label for="splitters">Custom Splitters (comma-separated):</label>
+                <input type="text" id="splitters" value=".,\n,۔">
+            </div>
+        </div>
+
+        <!-- Output View -->
+        <div class="section" id="outputView">
+            <h2>Output View</h2>
+            <div id="outputText" class="scrollable"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
