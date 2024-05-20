@@ -63,3 +63,9 @@ textarea {
 .dark-mode .colorful-line:nth-child(5) { background-color: #1b5e20; }
 .dark-mode .colorful-line:nth-child(6) { background-color: #bf360c; }
 .dark-mode .colorful-line:nth-child(7) { background-color: #0d47a1; }
+
+#progressBar {
+    height: 5px;
+    background-color: #007bff;
+    width: 0;
+}
