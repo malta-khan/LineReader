@@ -1,6 +1,7 @@
 document.getElementById('inputText').addEventListener('input', updateOutput);
 document.getElementById('direction').addEventListener('change', updateOutput);
 document.getElementById('fontFamily').addEventListener('change', updateOutput);
+document.getElementById('fontSize').addEventListener('change', updateOutput);
 document.getElementById('darkMode').addEventListener('change', toggleDarkMode);
 document.getElementById('colorfulLines').addEventListener('change', updateOutput);
 document.getElementById('splitters').addEventListener('input', updateOutput);
@@ -11,6 +12,7 @@ function updateOutput() {
     const inputText = document.getElementById('inputText').value;
     const direction = document.getElementById('direction').value;
     const fontFamily = document.getElementById('fontFamily').value;
+    const fontSize = document.getElementById('fontSize').value;
     const colorfulLines = document.getElementById('colorfulLines').checked;
     const customSplittersInput = document.getElementById('splitters').value;
 
@@ -22,6 +24,8 @@ function updateOutput() {
     outputText.innerHTML = '';
     outputText.style.direction = direction;
     outputText.style.fontFamily = fontFamily;
+    outputText.style.fontSize = `${fontSize}px`;
+
 
     const regex = new RegExp(`(${splitters.map(s => escapeRegExp(s)).join('|')})`, 'g');
     const segments = inputText.split(regex);
@@ -68,6 +72,9 @@ outputText.addEventListener('wheel', function(event) {
         event.preventDefault();
         const scaleAmount = event.deltaY > 0 ? 0.9 : 1.1;
         const currentFontSize = parseFloat(window.getComputedStyle(outputText).fontSize);
-        outputText.style.fontSize = `${currentFontSize * scaleAmount}px`;
+        document.getElementById('fontSize').value = `${parseInt(currentFontSize * scaleAmount)}`
+        updateOutput()
     }
 });
+
+updateOutput()
