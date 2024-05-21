@@ -4,8 +4,6 @@ document.getElementById('fontFamily').addEventListener('change', updateOutput);
 document.getElementById('darkMode').addEventListener('change', toggleDarkMode);
 document.getElementById('colorfulLines').addEventListener('change', updateOutput);
 document.getElementById('splitters').addEventListener('input', updateOutput);
-document.getElementById('increaseFontSize').addEventListener('click', increaseFontSize);
-document.getElementById('decreaseFontSize').addEventListener('click', decreaseFontSize);
 
 const defaultSplitters = ['.', '\n', '۔'];
 
@@ -40,8 +38,6 @@ function updateOutput() {
         }
         outputText.appendChild(span);
     });
-
-    updateProgressBar();
 }
 
 function toggleDarkMode() {
@@ -50,3 +46,28 @@ function toggleDarkMode() {
     const outputText = document.getElementById('outputText');
 
     if (isChecked) {
+        body.classList.add('dark-mode');
+        outputText.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+        outputText.classList.remove('dark-mode');
+    }
+}
+
+// Utility function to escape special characters for use in regex
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Implement pinch to zoom functionality
+let lastTouchEnd = 0;
+const outputText = document.getElementById('outputText');
+
+outputText.addEventListener('wheel', function(event) {
+    if (event.ctrlKey) {
+        event.preventDefault();
+        const scaleAmount = event.deltaY > 0 ? 0.9 : 1.1;
+        const currentFontSize = parseFloat(window.getComputedStyle(outputText).fontSize);
+        outputText.style.fontSize = `${currentFontSize * scaleAmount}px`;
+    }
+});
