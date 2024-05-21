@@ -1,42 +1,52 @@
+document.getElementById('inputText').addEventListener('input', updateOutput);
+document.getElementById('direction').addEventListener('change', updateOutput);
+document.getElementById('fontFamily').addEventListener('change', updateOutput);
+document.getElementById('darkMode').addEventListener('change', toggleDarkMode);
+document.getElementById('colorfulLines').addEventListener('change', updateOutput);
+document.getElementById('splitters').addEventListener('input', updateOutput);
+document.getElementById('increaseFontSize').addEventListener('click', increaseFontSize);
+document.getElementById('decreaseFontSize').addEventListener('click', decreaseFontSize);
+
+const defaultSplitters = ['.', '\n', '۔'];
+
+function updateOutput() {
+    const inputText = document.getElementById('inputText').value;
+    const direction = document.getElementById('direction').value;
+    const fontFamily = document.getElementById('fontFamily').value;
+    const colorfulLines = document.getElementById('colorfulLines').checked;
+    const customSplittersInput = document.getElementById('splitters').value;
+
+    const splitters = defaultSplitters.concat(
+        customSplittersInput.split(',').map(s => s.trim()).filter(s => s)
+    );
+
+    const outputText = document.getElementById('outputText');
+    outputText.innerHTML = '';
+    outputText.style.direction = direction;
+    outputText.style.fontFamily = fontFamily;
+
+    const regex = new RegExp(`(${splitters.map(s => escapeRegExp(s)).join('|')})`, 'g');
+    const segments = inputText.split(regex);
+
+    segments.forEach((segment, index) => {
+        const span = document.createElement('span');
+        span.textContent = segment;
+        if (splitters.includes(segment)) {
+            span.classList.add('splitter');
+        } else {
+            if (colorfulLines) {
+                span.classList.add('colorful-line', `color-${Math.floor(index / 2) % 7}`);
+            }
+        }
+        outputText.appendChild(span);
+    });
+
+    updateProgressBar();
+}
+
 function toggleDarkMode() {
     const isChecked = document.getElementById('darkMode').checked;
     const body = document.body;
     const outputText = document.getElementById('outputText');
 
     if (isChecked) {
-        body.classList.add('dark-mode');
-        outputText.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-        outputText.classList.remove('dark-mode');
-    }
-
-    updateOutput();
-}
-
-function updateProgressBar() {
-    const outputText = document.getElementById('outputText');
-    const progressBar = document.getElementById('progressBar');
-    const scrollWidth = outputText.scrollWidth - outputText.clientWidth;
-    const scrolledRatio = outputText.scrollLeft / scrollWidth;
-    progressBar.style.width = `${scrolledRatio * 100}%`;
-}
-
-function increaseFontSize() {
-    const outputText = document.getElementById('outputText');
-    const currentFontSize = parseFloat(window.getComputedStyle(outputText).fontSize);
-    outputText.style.fontSize = `${currentFontSize * 1.1}px`;
-}
-
-function decreaseFontSize() {
-    const outputText = document.getElementById('outputText');
-    const currentFontSize = parseFloat(window.getComputedStyle(outputText).fontSize);
-    outputText.style.fontSize = `${currentFontSize * 0.9}px`;
-}
-
-function escapeRegExp(string) {
-    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
-}
-
-// Initial call to updateOutput
-updateOutput();
