@@ -77,4 +77,26 @@ outputText.addEventListener('wheel', function(event) {
     }
 });
 
+function initialize (){
+    let defaultValues = samples[document.URL.split("html#")[1]];
+    console.log(defaultValues)
+if(!defaultValues){
+    defaultValues = {
+        text: "Hello World!",
+        direction: "ltr",
+        fontFamily: "Arial",
+        splitters: ".,\\n,۔",
+        fontSize: 140,
+        colors: true
+    }
+}
+document.getElementById('inputText').value = defaultValues.text ; 
+document.getElementById('direction').value = defaultValues.direction ; 
+document.getElementById('fontFamily').value = defaultValues.fontFamily ; 
+document.getElementById('splitters').value = defaultValues.splitters ; 
+document.getElementById('fontSize').value = defaultValues.fontSize ; 
+document.getElementById('colorfulLines').checked = defaultValues.colors ; 
 updateOutput()
+}
+
+initialize()

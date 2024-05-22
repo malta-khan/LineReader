@@ -74,3 +74,19 @@ select, input{
     height: 30px;
     font-weight: 700;
 }
+
+.button{
+    text-decoration: none;
+    color: rgb(15, 14, 121);
+    background-color: #eee;
+    padding: 10px 20px;
+    border: 2px dotted #333;
+    border-radius: 6px;
+}
+
+.button:hover{
+    background-color: #e7f5c2;
+}
+.button:active{
+    background-color: #f5c2da;
+}

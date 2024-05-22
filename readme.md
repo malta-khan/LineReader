@@ -1,6 +1,6 @@
-**LineTrack Reader: Assistive Web App for Kids with Low Vision**
+**LineReader: Assistive Web App for Kids with Low Vision**
 
-LineTrack Reader is a user-friendly tool designed to assist children with low vision in reading more comfortably on their smartphones, particularly in landscape orientation. This accessible web application allows kids to input text and customize the display according to their preferences, making reading easier and more enjoyable.
+LineReader is a user-friendly tool designed to assist children with low vision in reading more comfortably on their smartphones, particularly in landscape orientation. This accessible web application allows kids to input text and customize the display according to their preferences, making reading easier and more enjoyable.
 
 **Features:**
 - **Text Input Area:** Kids can paste or type text into a large, easy-to-use text area.

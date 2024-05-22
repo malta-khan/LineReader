@@ -1,63 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LineTrack Reader</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LineReader</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Inputs -->
-        <div class="section" id="inputs">
-            <h2>Input Text</h2>
-            <textarea id="inputText" placeholder="Enter your text here...">Hello World!</textarea>
-        </div>
-
-        <!-- Options -->
-        <div class="section" id="options">
-            <h2>Options</h2>
-            <div class="inputWrapper">
-                <label for="direction">Text Direction:</label>
-                <select id="direction">
-                    <option value="ltr">Left to Right (LTR)</option>
-                    <option value="rtl">Right to Left (RTL)</option>
-                </select>
-            </div>
-            <div class="inputWrapper">
-                <label for="fontFamily">Font Family:</label>
-                <select id="fontFamily">
-                    <option value="Arial">Arial</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="NotoNastaliq">Noto Nastaliq Urdu</option>
-                </select>
-            </div>
-            <div class="inputWrapper">
-                <label for="splitters">Custom Splitters (comma-separated):</label>
-                <input type="text" id="splitters" value=".,\n,۔">
-            </div>
-            <div class="inputWrapper">
-                <label for="fontSize">Font Size (px):</label>
-                <input type="number" id="fontSize" value=140 step="20">
-            </div>
-            <div>
-                <label for="darkMode">Dark Mode:</label>
-                <input type="checkbox" id="darkMode">
-            </div>
-            <div>
-                <label for="colorfulLines">Colorful Lines:</label>
-                <input type="checkbox" id="colorfulLines">
-            </div>
-        </div>
-
-        <!-- Output View -->
-        <div class="section" id="outputView">
-            <h2>Output View</h2>
-            <div id="outputText" class="scrollable"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+  <div class="container">
+    <h1><a href="./index.html" class="logo">LineReader</a></h1>
+    <p>LineReader is a tool designed to assist children with low vision in reading more comfortably on their smartphones, particularly in landscape orientation. The main idea is to display all of the text in a single long line. This allows kids to focus on reading instead of pinching and zooming in and out again and again. Try it out!
+    </p>
+    <h2><a class="button" href="./read.html">Start Reading</a></h2>
+  </div>
+  </body>
 </html>
