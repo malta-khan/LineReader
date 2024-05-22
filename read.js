@@ -78,7 +78,7 @@ outputText.addEventListener('wheel', function(event) {
 });
 
 function initialize (){
-    let defaultValues = samples[document.URL.split("html#")[1]];
+    let defaultValues = examples[document.URL.split("html#")[1]];
     console.log(defaultValues)
 if(!defaultValues){
     defaultValues = {

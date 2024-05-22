@@ -81,7 +81,7 @@ select, input{
     background-color: #eee;
     padding: 10px 20px;
     border: 2px dotted #333;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 .button:hover{
@@ -89,4 +89,28 @@ select, input{
 }
 .button:active{
     background-color: #f5c2da;
+}
+
+#exampleTexts{
+    align-self: baseline;
+    margin-top: 50px;
+}
+
+.example-link{
+    text-decoration: none;
+    border: 1px dashed #9b3585;
+    border-radius: 7px;
+    padding: 10px;
+    background-color:#ffe7fa;
+    font-family: "NotoNastaliq";
+
+}
+.example-link a{
+    font-weight: bold;
+    font-size: 18px;
+    color: #1b007c ;
+}
+
+.example-link p{
+    margin-top: 7px;
 }
