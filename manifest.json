@@ -3,6 +3,7 @@
   "short_name": "LR",
   "description": "LineReader is a tool for children with vision impairment, displaying text in a single line, it eliminates the need for zooming in and out again and again.",
   "start_url": "/LineTrack-Reader/index.html",
+  "scope": "/LineTrack-Reader/"
   "display": "standalone",
   "background_color": "#f5f5f3",
   "theme_color": "#6d3393",
