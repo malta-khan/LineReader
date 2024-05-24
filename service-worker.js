@@ -1,12 +1,11 @@
 const CACHE_NAME = 'lineReader-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/read.html',
-  '/styles.css',
-  '/index.js',
-  '/read.js',
-  '/examples.js'
+  '/LineTrack-Reader/index.html',
+  '/LineTrack-Reader/read.html',
+  '/LineTrack-Reader/styles.css',
+  '/LineTrack-Reader/index.js',
+  '/LineTrack-Reader/read.js',
+  '/LineTrack-Reader/examples.js'
 ];
 
 // Install a service worker
