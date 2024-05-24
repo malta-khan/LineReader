@@ -1,6 +1,6 @@
 {
-  "name": "LineReader - displaying text in a single line",
-  "short_name": "LineReader",
+  "name": "LineReader",
+  "short_name": "LR",
   "description": "LineReader is a tool for children with vision impairment, displaying text in a single line, it eliminates the need for zooming in and out again and again.",
   "start_url": "/LineTrack-Reader/index.html",
   "display": "standalone",
