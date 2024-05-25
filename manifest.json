@@ -2,7 +2,7 @@
   "name": "LineReader",
   "short_name": "lineReader",
   "description": "LineReader is a tool for children with vision impairment, displaying text in a single line, it eliminates the need for zooming in and out again and again.",
-  "start_url": "/index.html",
+  "start_url": "/LineReader/index.html",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f5f5f3",
