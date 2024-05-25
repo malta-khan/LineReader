@@ -103,6 +103,7 @@ select, input{
     padding: 10px;
     background-color:#ffe7fa;
     font-family: "NotoNastaliq";
+    margin-bottom: 10px;
 
 }
 .example-link a{
